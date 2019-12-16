@@ -31,7 +31,7 @@ class PadmaLottieFilesBlock extends PadmaBlockAPI {
 		if ( !$block )
 			$block = PadmaBlocksData::get_block($block_id);
 
-		$css = '';
+		$css = 'lottie-player{width: 100%;}';
 
 		return $css;
 		
@@ -117,7 +117,7 @@ class PadmaLottieFilesBlock extends PadmaBlockAPI {
 		$path = plugin_dir_url( __FILE__ );
 
 		/* JS */		
-		wp_enqueue_script( 'padma-lottiefiles', $path . 'js/lottie.min.js' );
+		wp_enqueue_script( 'padma-lottiefiles', $path . 'js/lottie.min.js', [], false, true );
 	}
 }
 

@@ -3,7 +3,7 @@
 Plugin Name: Padma LottieFiles
 Plugin URI: https://www.padmaunlimited.com/plugins/lottiefiles
 Description: Lottie animations
-Version: 1.0.0
+Version: 1.0.2
 Author: Padma Unlimited team
 Author URI: https://www.padmaunlimited.com
 License: GNU GPL v2
