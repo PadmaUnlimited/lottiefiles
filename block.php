@@ -83,6 +83,12 @@ class PadmaLottieFilesBlock extends PadmaBlockAPI {
 		$origin = 'path';
 		
 		$loop = ( isset($block['settings']['loop']) ) ? $block['settings']['loop'] : 'loop';
+		if( $loop == 'yes' ){
+			$loop = 'loop';
+		}else{
+			$loop = ' ';
+		}
+		
 		$controls = ( isset($block['settings']['controls']) ) ? $block['settings']['controls'] : '';
 		$autoplay = ( isset($block['settings']['autoplay']) ) ? $block['settings']['autoplay'] : 'autoplay';
 		
@@ -191,8 +197,8 @@ class PadmaLottieFilesBlockOptions extends PadmaBlockOptionsAPI {
 					'label' => 'Loop',
 					'default' => 'true',
 					'options' => array(
-						'true' => 'Yes',
-						'false' => 'No',
+						'yes' => 'Yes',
+						'no' => 'No',
 					),				
 				),
 

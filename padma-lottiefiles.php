@@ -3,7 +3,7 @@
 Plugin Name: Padma LottieFiles
 Plugin URI: https://www.padmaunlimited.com/plugins/lottiefiles
 Description: Lottie animations
-Version: 1.0.2
+Version: 1.0.6
 Author: Padma Unlimited team
 Author URI: https://www.padmaunlimited.com
 License: GNU GPL v2
@@ -20,7 +20,10 @@ add_action('after_setup_theme', function() {
 	$class = 'PadmaLottieFilesBlock';
 	$block_type_url = substr(WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), '', plugin_basename(__FILE__)), 0, -1);		
 	$class_file = __DIR__ . '/block.php';
-	$icons = __DIR__;
+	$icons = array(
+			'path' => __DIR__,
+			'url' => $block_type_url
+		);
 
 	padma_register_block(
 		$class,
