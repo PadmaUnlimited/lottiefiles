@@ -17,6 +17,20 @@ add_action('after_setup_theme', function() {
 	if (!class_exists('PadmaBlockAPI') )
 		return false;
 
+	if( ! (version_compare( PADMA_VERSION, '1.2.0') >= 0) ){
+				
+		add_action( 'admin_notices', function() {
+		    ?>
+		    <div class="notice notice-warning is-dismissible">
+		        <p><?php _e( 'Padma LottieFiles requires Padma 1.2.0 or higher.', 'padma-lottiefiles' ); ?></p>
+		    </div>
+		    <?php
+		} );
+
+		return;
+		
+	}
+
 	$class = 'PadmaLottieFilesBlock';
 	$block_type_url = substr(WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), '', plugin_basename(__FILE__)), 0, -1);		
 	$class_file = __DIR__ . '/block.php';
@@ -31,6 +45,8 @@ add_action('after_setup_theme', function() {
 		$class_file,
 		$icons
 	);
+
+
 
 });
 
